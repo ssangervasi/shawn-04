@@ -1,4 +1,4 @@
-
+/** Mangles a string, for science. Does not cure catnip-phobia. */
 const rephrase = (phrase: string, pedantic: boolean = false): string => {
   if (pedantic) {
     return pedanticResponse(phrase);
@@ -19,6 +19,7 @@ const rephrase = (phrase: string, pedantic: boolean = false): string => {
   return response;
 }
 
+/** Why? Because we can. */
 const pedanticResponse = (phrase: string): string => {
   return phrase.match(/^[A-Z]/) ? 'Shaw' : 'shaw';
 }
