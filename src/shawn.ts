@@ -4,6 +4,7 @@ const rephrase = (phrase: string, pedantic: boolean = false): string => {
     return pedanticResponse(phrase);
   }
 
+  // TODO: Don't do this.
   const response = phrase
     .replace(/s/g, 'sh')
     .replace(/S/g, 'Sh')
