@@ -1,5 +1,5 @@
 
-const rephrase = (phrase: string, pedantic: boolean): string => {
+const rephrase = (phrase: string, pedantic: boolean = false): string => {
   if (pedantic) {
     return pedanticResponse(phrase);
   }
@@ -10,8 +10,11 @@ const rephrase = (phrase: string, pedantic: boolean): string => {
     .replace(/ce/g, 'she')
     .replace(/ci/g, 'shi')
     .replace(/cy/g, 'shy')
-    .replace(/ea/g, 'aw')
-    .replace(/(sh)+/g, 'sh');
+    .replace(/ean/g, 'awn')
+    .replace(/s[hH]+/g, 'sh')
+    .replace(/S[hH]+/g, 'Sh')
+    .replace(/(sh)+/g, 'sh')
+    .replace(/Sh(sh)*/g, 'Sh');
 
   return response;
 }
