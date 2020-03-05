@@ -46,7 +46,7 @@ describe('rephrase', () => {
       .toEqual('Shuck it Trebek.')
   });
 
-  describe('pedantic', () => {
+  test('pedantic', () => {
     expect(rephrase('SeA', true)).toEqual('Shaw')
     expect(rephrase('sEa', true)).toEqual('shaw')
   });
