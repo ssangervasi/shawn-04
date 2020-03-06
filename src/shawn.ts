@@ -4,13 +4,12 @@ const rephrase = (phrase: string, pedantic: boolean = false): string => {
     return pedanticResponse(phrase);
   }
 
-  // TODO: Don't do this.
   const response = phrase
-    .replace(/s/g, 'sh')
-    .replace(/S/g, 'Sh')
-    .replace(/ce/g, 'she')
-    .replace(/ci/g, 'shi')
-    .replace(/cy/g, 'shy')
+    // s => sh
+    .replace(/s/ig, match => `${match}h`)
+    // c[iey] => sh[iey]
+    .replace(/c([eiy])/g, (_match, vowel) => `sh${vowel}`)
+    .replace(/C([eiy])/g, (_match, vowel) => `Sh${vowel}`)
     .replace(/ean/g, 'awn')
     .replace(/s[hH]+/g, 'sh')
     .replace(/S[hH]+/g, 'Sh')
