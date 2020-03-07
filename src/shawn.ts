@@ -1,6 +1,5 @@
 import { forget as forgetSpeech, speakProperly } from './helpers/speak-properly'
-import { inflictBees } from './inflictions/bees'
-import { inflictDeath } from './inflictions/grim-reaper'
+import { inflict } from './inflictions/inflict'
 
 const INITIAL_SANITY : number = 30
 
@@ -18,17 +17,7 @@ const checkSanity = (sanity: number, goodResult: string) : string => {
     return 'Help! I\'m trapped in a text conversion factory!'
   }
 
-  if (sanity < 0) {
-    const rand : number = Math.floor(Math.random() * 10000) % 5
-
-    switch (rand) {
-    case 0: return inflictBees(goodResult)
-    case 1: return inflictDeath(goodResult)
-    default:
-    }
-  }
-
-  return goodResult
+  return sanity < 0 ? inflict(goodResult) : goodResult
 }
 
 const forget = () => {
