@@ -1,6 +1,8 @@
 # Shawn
 Telefactor: Shawn - Reference implementation
 
+🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾
+
 Sean Connery, why don't you pick?
 <https://youtu.be/8Zq3KCBed5Q?list=PLZfSCeE5MuigMa2Ahyd3pckdHCIuzJDFH&t=243>
 
@@ -40,7 +42,7 @@ If you're sourcerer then the `src/` directory should have `.ts` files which are
 just about empty. There should be some  `.test.ts` files, however, which contain
 a bunch of failing tests (which probably don't even compile right now).
 
-It's up to you to write source code in at least one file (`src/shawn.ts`) to make 
+It's up to you to write source code in at least one file (`src/shawn.ts`) to make
 those tests pass.
 
 Depending how confident you are with the tests and your understanding
@@ -114,20 +116,20 @@ npm install
 To check that worked, let's list what wersions we're werkin wit:
 
 ```sh
-npm list commander ts-node jest 
+npm list commander ts-node jest
 # Should be something like:
-#   ├── commander@4.0.1 
-#   ├─┬ jest@24.9.0 
+#   ├── commander@4.0.1
+#   ├─┬ jest@24.9.0
 #   │ └─┬ jest-cli@24.9.0
 #   │   └─┬ @jest/core@24.9.0
 #   │     └─┬ @jest/reporters@24.9.0
 #   │       └─┬ istanbul-reports@2.2.6
 #   │         └─┬ handlebars@4.5.3
 #   │           └─┬ uglify-js@3.7.2
-#   │             └── commander@2.20.3 
-#   ├── ts-node@8.1.0 
+#   │             └── commander@2.20.3
+#   ├── ts-node@8.1.0
 #   └─┬ tslint@5.16.0
-#     └── commander@2.20.3 
+#     └── commander@2.20.3
 ```
 
 ### Build!
@@ -224,7 +226,7 @@ npx jest
 # Constantly rerun tests on changed files
 npm run test-watch
 # or
-npx jest --watch 
+npx jest --watch
 ```
 
 Jest is configured with `jest.config.js`, which you shouldn't need to modify.
