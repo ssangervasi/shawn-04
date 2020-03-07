@@ -1,6 +1,6 @@
 import {
   rephrase,
-} from './shawn'
+} from '../src/shawn'
 
 describe('rephrase', () => {
   test('replaces [sS]ean with [sS]hawn', () => {
