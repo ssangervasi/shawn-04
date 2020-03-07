@@ -1,7 +1,6 @@
-let sanity : number = 30;
-let pleaseStopItCount : number = 0;
+import { handleBadSentence, isBadSentence } from './helpers/handle-bad-sentence';
 
-const BAD_SENTENCE : string = 'Sssssix SsSsStick shiftsssS sssSSsstuck sSShut';
+let sanity : number = 30;
 
 /** Mangles a string, for science. Does not cure catnip-phobia. */
 const rephrase = (phrase: string, pedantic: boolean = false): string => {
@@ -11,8 +10,8 @@ const rephrase = (phrase: string, pedantic: boolean = false): string => {
 };
 
 const speakProperly = (phrase: string, pedantic: boolean) : string => {
-  if (phrase === BAD_SENTENCE) {
-    return handleBad();
+  if (isBadSentence(phrase)) {
+    return handleBadSentence();
   }
 
   if (pedantic) {
@@ -34,16 +33,6 @@ const speakProperly = (phrase: string, pedantic: boolean) : string => {
     // aw? aw!
     .replace(/ean/g, 'awn');
 };
-
-/** I really don't understand the test rule this came from. It didn't obey itself even. */
-const handleBad = () : string => {
-  if (pleaseStopItCount > 0) {
-    return 'Never send me that atrocious sentence again.';
-  }
-
-  pleaseStopItCount++;
-  return 'Shix ShShShtick shiftsh shtuck shut';
-}
 
 /** Why? Because we can. */
 const pedanticResponse = (phrase: string): string => {
