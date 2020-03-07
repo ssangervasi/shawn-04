@@ -8,7 +8,8 @@
 	},
 	"scripts": {
 		"build": "rimraf dist && tsc",
-		"cli": "ts-node --files ./src/cli.ts",
+    "cli": "ts-node --files ./src/cli.ts",
+    "doodle": "tsc src/**/*.ts && node ./src/main.js",
 		"install-shawn": "npm run build && npm unlink && npm link",
 		"lint": "eslint --fix --cache './src/**'",
 		"ndb": "ndb ./dist/cli.js",
