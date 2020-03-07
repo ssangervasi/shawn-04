@@ -1,37 +1,37 @@
-import { forget as forgetBadSentence, handleBadSentence, isBadSentence } from './handle-bad-sentence';
+import { forget as forgetBadSentence, handleBadSentence, isBadSentence } from './handle-bad-sentence'
 
 const speakProperly = (phrase: string, pedantic: boolean) : string => {
   if (isBadSentence(phrase)) {
-    return handleBadSentence();
+    return handleBadSentence()
   }
 
   if (pedantic) {
-    return pedanticResponse(phrase);
+    return pedanticResponse(phrase)
   }
 
   return phrase
-    // ssssssssss => s
+  // ssssssssss => s
     .replace(/(s)s+/ig, (_match, s) => s)
-    // s => sh
+  // s => sh
     .replace(/s/ig, match => `${match}h`)
-    // dedupe h's
+  // dedupe h's
     .replace(/(h)h+/ig, (_match, h) => h)
-    // dedupe sh's
+  // dedupe sh's
     .replace(/(sh)(sh)+/ig, (_match, sh) => sh)
-    // c[iey] => sh[iey]
+  // c[iey] => sh[iey]
     .replace(/c([eiy])/g, (_match, vowel) => `sh${vowel}`)
     .replace(/C([eiy])/g, (_match, vowel) => `Sh${vowel}`)
-    // aw? aw!
-    .replace(/ean/g, 'awn');
-};
+  // aw? aw!
+    .replace(/ean/g, 'awn')
+}
 
 /** Why? Because we can. */
 const pedanticResponse = (phrase: string): string => {
-  return phrase.match(/^[A-Z]/) ? 'Shaw' : 'shaw';
-};
-
-const forget = () => {
-  forgetBadSentence();
+  return phrase.match(/^[A-Z]/) ? 'Shaw' : 'shaw'
 }
 
-export { forget, speakProperly };
+const forget = () => {
+  forgetBadSentence()
+}
+
+export { forget, speakProperly }

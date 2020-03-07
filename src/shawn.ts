@@ -1,21 +1,26 @@
-import { speakProperly } from './helpers/speak-properly';
+import { forget as forgetSpeech, speakProperly } from './helpers/speak-properly'
 
-const INITIAL_SANITY : number = 30;
-let sanity : number = INITIAL_SANITY;
+const INITIAL_SANITY : number = 30
+let sanity : number = INITIAL_SANITY
 
 /** Mangles a string, for science. Does not cure catnip-phobia. */
 const rephrase = (phrase: string, pedantic: boolean = false): string => {
-  sanity--;
+  sanity--
 
-  return checkSanity(sanity) || speakProperly(phrase, pedantic);
-};
+  return checkSanity(sanity) || speakProperly(phrase, pedantic)
+}
 
 const checkSanity = (sanity: number) : string => {
   if (sanity === 10) {
-    return 'Help! I\'m trapped in a text conversion factory!';
+    return 'Help! I\'m trapped in a text conversion factory!'
   }
 
-  return '';
-};
+  return ''
+}
 
-export { rephrase };
+const forget = () => {
+  sanity = INITIAL_SANITY
+  forgetSpeech()
+}
+
+export { forget, rephrase }
