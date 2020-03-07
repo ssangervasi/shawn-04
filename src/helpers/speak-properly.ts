@@ -10,19 +10,13 @@ const speakProperly = (phrase: string, pedantic: boolean) : string => {
   }
 
   return phrase
-  // ssssssssss => s
-    .replace(/(s)s+/ig, (_match, s) => s)
-  // s => sh
-    .replace(/s/ig, match => `${match}h`)
-  // dedupe h's
-    .replace(/(h)h+/ig, (_match, h) => h)
-  // dedupe sh's
-    .replace(/(sh)(sh)+/ig, (_match, sh) => sh)
-  // c[iey] => sh[iey]
-    .replace(/c([eiy])/g, (_match, vowel) => `sh${vowel}`)
-    .replace(/C([eiy])/g, (_match, vowel) => `Sh${vowel}`)
-  // aw? aw!
-    .replace(/ean/g, 'awn')
+    .replace(/(s)s+/ig, (_match, s) => s) // ssssssssss => s
+    .replace(/s/ig, match => `${match}h`) // s => sh
+    .replace(/(h)h+/ig, (_match, h) => h) // dedupe h's
+    .replace(/(sh)(sh)+/ig, (_match, sh) => sh) // dedupe sh's
+    .replace(/c([eiy])/g, (_match, vowel) => `sh${vowel}`) // c[iey] => sh[iey]
+    .replace(/C([eiy])/g, (_match, vowel) => `Sh${vowel}`) // C[iey] => sh[iey]
+    .replace(/ean/g, 'awn') // aw? aw!
 }
 
 /** Why? Because we can. */
