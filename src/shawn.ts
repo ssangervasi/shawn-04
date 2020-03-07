@@ -1,7 +1,7 @@
 import { forget as forgetSpeech, speakProperly } from './helpers/speak-properly'
 import { inflict } from './inflictions/inflict'
 
-const INITIAL_SANITY : number = 30
+const INITIAL_SANITY : number = 100
 
 let sanity : number = INITIAL_SANITY
 

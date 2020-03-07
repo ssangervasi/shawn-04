@@ -2,7 +2,7 @@ import { getRandomInt } from './random'
 import { inflictBees } from './bees'
 import { inflictDeath } from './grim-reaper'
 
-const DEFAULT_RATE : number = 5
+const DEFAULT_RATE : number = 15
 
 /**
  * Lower numbers for "rate" means more common afflictions. (Sorry!)
