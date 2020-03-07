@@ -1,42 +1,13 @@
-import { handleBadSentence, isBadSentence } from './helpers/handle-bad-sentence';
+import { speakProperly } from './helpers/speak-properly';
 
-let sanity : number = 30;
+const INITIAL_SANITY : number = 30;
+let sanity : number = INITIAL_SANITY;
 
 /** Mangles a string, for science. Does not cure catnip-phobia. */
 const rephrase = (phrase: string, pedantic: boolean = false): string => {
   sanity--;
 
   return checkSanity(sanity) || speakProperly(phrase, pedantic);
-};
-
-const speakProperly = (phrase: string, pedantic: boolean) : string => {
-  if (isBadSentence(phrase)) {
-    return handleBadSentence();
-  }
-
-  if (pedantic) {
-    return pedanticResponse(phrase);
-  }
-
-  return phrase
-    // ssssssssss => s
-    .replace(/(s)s+/ig, (_match, s) => s)
-    // s => sh
-    .replace(/s/ig, match => `${match}h`)
-    // dedupe h's
-    .replace(/(h)h+/ig, (_match, h) => h)
-    // dedupe sh's
-    .replace(/(sh)(sh)+/ig, (_match, sh) => sh)
-    // c[iey] => sh[iey]
-    .replace(/c([eiy])/g, (_match, vowel) => `sh${vowel}`)
-    .replace(/C([eiy])/g, (_match, vowel) => `Sh${vowel}`)
-    // aw? aw!
-    .replace(/ean/g, 'awn');
-};
-
-/** Why? Because we can. */
-const pedanticResponse = (phrase: string): string => {
-  return phrase.match(/^[A-Z]/) ? 'Shaw' : 'shaw';
 };
 
 const checkSanity = (sanity: number) : string => {
