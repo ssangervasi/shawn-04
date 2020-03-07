@@ -1,6 +1,6 @@
 {
 	"name": "shawn",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Telefactor: shawn - Reference implementation",
 	"main": "dist/main.js",
 	"bin": {
@@ -8,8 +8,8 @@
 	},
 	"scripts": {
 		"build": "rimraf dist && tsc",
-    "cli": "ts-node --files ./src/cli.ts",
-    "doodle": "tsc src/*.ts src/**/*.ts && node ./src/main.js",
+		"cli": "ts-node --files ./src/cli.ts",
+		"doodle": "tsc src/*.ts src/**/*.ts && node ./src/main.js",
 		"install-shawn": "npm run build && npm unlink && npm link",
 		"lint": "eslint --fix --cache './src/**'",
 		"ndb": "ndb ./dist/cli.js",
