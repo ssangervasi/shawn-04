@@ -9,6 +9,6 @@ function print(s : string) {
   console.log(countStr, s)
 }
 
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 60; i++) {
   print(rephrase('Sally sells seashells by the seashore'))
 }

@@ -10,10 +10,10 @@ const BEES : string = ['     ^^      .-=-=-=-.  ^^',
   '       (`-=-=-=-=-=-=-=-`)          ^^',
   '        (`-=-=-=-=-=-=-`)  ^^                 ^^',
   '    jgs   (`-=-=-=-=-`)',
-  '           `-=-=-=-=-`'].join('\n');
+  '           `-=-=-=-=-`'].join('\n')
 
 const inflictBees = (victim : string) : string => {
-  return `${victim}\n\n${BEES}`;
-};
+  return `${victim}\n\n${BEES}`
+}
 
 export { inflictBees }
